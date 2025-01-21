@@ -1,3 +1,79 @@
+[EN]
+# Companies Repository
+
+This project is a FastAPI-based application designed to manage company data using PostgreSQL for data storage. Below is a detailed guide for setting up and running the application.
+
+---
+
+## Project Setup
+
+### Prerequisites
+- **Python 3.10** or higher
+- **PostgreSQL** installed and running
+- **Git** installed on your system
+
+---
+
+## Steps to Run the Application
+
+1. **Clone the Repository**:
+   ```bash
+   git clone https://github.com/eliseiv/companies-repository.git
+   cd companies-repository
+   ```
+
+2. **Set up a Virtual Environment**:
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install Dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set Up the Database**:
+   - Ensure PostgreSQL is running.
+   - Create a new database.
+   - Update the `DATABASE_URL` in `config.py` with your database credentials.
+
+5. **Apply Database Migrations**:
+   ```bash
+   alembic upgrade head
+   ```
+
+6. **Run the Application**:
+   ```bash
+   uvicorn app.main:app --reload
+   ```
+
+   The application will be accessible at `http://127.0.0.1:8000`.
+
+---
+
+## Project Overview
+
+### Technologies Used
+- **FastAPI** for building the web framework
+- **SQLAlchemy** for ORM (Object Relational Mapping)
+- **Alembic** for database migrations
+- **PostgreSQL** as the database
+- **Uvicorn** as the ASGI server
+
+---
+
+## Additional Notes
+
+- All dependencies are listed in the `requirements.txt` file.
+- The `Dockerfile` is included but not configured for full use in this version.
+- Make sure to add `.env` support if required for secure database credentials.
+
+
+
+
+
+[RU]
 Companies Repository
 
 Приложение “Companies Repository” — это API на базе FastAPI для управления данными компаний. В проекте используется PostgreSQL для хранения данных, SQLAlchemy для работы с базой данных и Alembic для управления миграциями.
